@@ -19,9 +19,9 @@ public class TriangleTest {
 
     @Test
     public void areaNot() {
-        Point a = new Point(0, 8);
+        Point a = new Point(8, 0);
         Point b = new Point(4, 0);
-        Point c = new Point(18, 16);
+        Point c = new Point(32, 4);
         Triangle triangle = new Triangle(a, b, c);
         double rsl = triangle.area();
         assertThat(rsl, closeTo(8, 0.001));
