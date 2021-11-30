@@ -9,16 +9,15 @@ public class Calculator {
     }
 
     public static int minus(int b) {
-        return x - b;
+        return b - x;
     }
 
     public int divide(int c) {
-        return x / c;
+        return c / x;
     }
 
     public int sumAllOperation(int d) {
-        d = sum(d) + minus(d) + divide(d) + multiply(d);
-        return d;
+        return sum(d) + minus(d) + divide(d) + multiply(d);
     }
 
     public int multiply(int a) {
