@@ -8,7 +8,6 @@ public class Engineer extends Profession {
         this.experience = experience;
     }
 
-
     public void writeCode(Code code) {
 
     }
