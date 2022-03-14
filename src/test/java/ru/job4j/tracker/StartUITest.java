@@ -6,6 +6,7 @@ import static org.hamcrest.Matchers.nullValue;
 import static org.junit.Assert.assertThat;
 
 public class StartUITest {
+    /* Добавим в tracker новую заявку */
 
     @Test
     public void whenCreateItem() {
