@@ -1,15 +1,18 @@
 package ru.job4j.tracker;
 
 public class SingleTracker {
-    private Tracker tracker = new Tracker();
+    private static Tracker tracker = new Tracker();
 
     /* реализовать singleton */
+    private SingleTracker() {
+
+    }
 
     public Item add(Item item) {
         return tracker.add(item);
     }
 
-    public Item findById(int id) {
+    public static Item findById(int id) {
         return tracker.findById(id);
     }
 
