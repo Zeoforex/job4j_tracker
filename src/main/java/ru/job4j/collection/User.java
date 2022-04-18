@@ -40,7 +40,9 @@ public class User implements Comparable<User> {
 
     @Override
     public int compareTo(User o) {
-        int compareResult = getName().compareTo(o.getName()) == 0 ? Integer.compare(age, o.getAge()) : getName().compareTo(o.getName());
+        int compareResult = getName().compareTo(o.getName()) == 0
+                ? Integer.compare(age, o.getAge())
+                : getName().compareTo(o.getName());
         return compareResult;
     }
 }
