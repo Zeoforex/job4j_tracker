@@ -6,20 +6,15 @@ public class BankService {
     private final Map<User, List<Account>> users = new HashMap<>();
 
     public void addUser(User user) {
-        users.putIfAbsent(user, new ArrayList<Account>());
+        users.putIfAbsent(user, new ArrayList<>());
     }
 
     public void addAccount(String passport, Account account) {
         User user = findByPassport(passport);
         if (user != null) {
             List<Account> accounts = users.get(user);
-            if (accounts.isEmpty()) {
+            if (!accounts.contains(account)) {
                 accounts.add(account);
-            } else {
-                boolean contains = accounts.contains(account);
-                if (!contains) {
-                    accounts.add(account);
-                }
             }
         }
     }
@@ -51,7 +46,7 @@ public class BankService {
         Account accountSrc = findByRequisite(srcPassport, srcRequisite);
         Account accountDest = findByRequisite(destPassport, destRequisite);
         boolean rsl = false;
-        if (accountSrc.getBalance() >= amount && accountSrc != null && accountDest != null) {
+        if (accountSrc != null && accountDest != null && accountSrc.getBalance() >= amount) {
             accountSrc.setBalance(accountSrc.getBalance() - amount);
             accountDest.setBalance(accountDest.getBalance() + amount);
             return true;
