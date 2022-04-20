@@ -13,7 +13,7 @@ public class BankService {
     /**
      * Добавление юзера в наш Банк
      * Метод принимает юзера и добавляет с помощью метода putIfAbsent так как он удобнее
-     * @param user
+     * @param user принимает юзера, чтобы добавить его
      */
     public void addUser(User user) {
         users.putIfAbsent(user, new ArrayList<>());
@@ -24,8 +24,8 @@ public class BankService {
      * Сначала смотрим что наш юзер не нулевой
      * Потом проверяю, что у аккаунтов которые мы извлекли нет добавляемого аккаунта
      * И в последнюю очередь уже добавляем
-     * @param passport
-     * @param account
+     * @param passport принимает паспортные данные, чтоб найти юзера
+     * @param account принимает аккаунт, чтобы убедиться, что у нас в массиве у нас такого нет
      */
     public void addAccount(String passport, Account account) {
         User user = findByPassport(passport);
@@ -42,8 +42,8 @@ public class BankService {
      * Мы в цикле проходимся по ключам users и потом находим того юзера
      * У которого паспортные данные совпадают с нашими
      * И его выводим
-     * @param passport
-     * @return
+     * @param passport паспортные данные, чтобы найти необходимого юзера
+     * @return userFind нахождение необходимого юзера
      */
     public User findByPassport(String passport) {
         for (User userFind : users.keySet()) {
@@ -60,9 +60,9 @@ public class BankService {
      * Дальше находим все аккаунты по users.get
      * А дальше проходимся по циклу и по условию ищем необходимого аккаунта
      * И возвращаем его
-     * @param passport
-     * @param requisite
-     * @return account
+     * @param passport принимает паспортные данные чтобы найти всех пользователей
+     * @param requisite принимает реквизиты
+     * @return account возвращает метод наш аккаунт с балансом и реквизитами
      */
     public Account findByRequisite(String passport, String requisite) {
         User user = findByPassport(passport);
@@ -84,12 +84,13 @@ public class BankService {
      * И пользуемся сеттерами чтоб осуществить перевод
      * (снятие денег с 1 счета и зачисление на 2 счет)
      * И выводим true если получилось или false если нет
-     * @param srcPassport
-     * @param srcRequisite
-     * @param destPassport
-     * @param destRequisite
-     * @param amount
-     * @return
+     * @param srcPassport паспортные данные отправителя
+     * @param srcRequisite реквизиты отправителя
+     * @param destPassport паспортные данные получателя
+     * @param destRequisite реквизиты получателя
+     * @param amount сумма перевода
+     * @return возвращает булево значение(true если все получилось
+     * или false в обратном случае)
      */
     public boolean transferMoney(String srcPassport, String srcRequisite,
                                  String destPassport, String destRequisite, double amount) {

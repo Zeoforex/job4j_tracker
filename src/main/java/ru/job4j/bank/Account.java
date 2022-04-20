@@ -14,8 +14,8 @@ public class Account {
 
     /**
      * Конструктор, который принимает реквизиты и баланс
-     * @param requisite
-     * @param balance
+     * @param requisite принимает реквизит
+     * @param balance принимает значение баланса
      */
     public Account(String requisite, double balance) {
         this.requisite = requisite;
@@ -23,9 +23,9 @@ public class Account {
     }
 
     /**
-     * геттер на ревизит
-     * необходим чтобы работать с реквзитами
-     * @return
+     * геттер на реквизит
+     * необходим, чтобы работать с реквзитами
+     * @return возвращает наш реквизит
      */
     public String getRequisite() {
         return requisite;
@@ -33,7 +33,7 @@ public class Account {
 
     /**
      * Сеттер для изменений реквизитов
-     * @param requisite
+     * @param requisite принимает реквизит, чтобы в будущем его изменить
      */
     public void setRequisite(String requisite) {
         this.requisite = requisite;
@@ -41,7 +41,7 @@ public class Account {
 
     /**
      * Геттер, чтобы обращаться к балансу
-     * @return
+     * @return возвращает баланс
      */
     public double getBalance() {
         return balance;
@@ -49,7 +49,7 @@ public class Account {
 
     /**
      * Сеттер для изменения баланса, если нужно будет
-     * @param balance
+     * @param balance принимает баланс для изменения
      */
     public void setBalance(double balance) {
         this.balance = balance;
@@ -57,8 +57,8 @@ public class Account {
 
     /**
      * Переопределение equals для работы в будущем
-     * @param o
-     * @return
+     * @param o принимает параметр Object
+     * @return возвращает булево значение
      */
     @Override
     public boolean equals(Object o) {
@@ -74,7 +74,7 @@ public class Account {
 
     /**
      * Переопределение hasCode
-     * @return
+     * @return возвращает hashCode
      */
     @Override
     public int hashCode() {

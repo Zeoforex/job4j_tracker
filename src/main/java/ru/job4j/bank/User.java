@@ -14,8 +14,8 @@ public class User {
 
     /**
      * Конструктор, который принимает паспортные данные и имя
-     * @param passport
-     * @param username
+     * @param passport принимает паспортные данные
+     * @param username принимает имя
      */
     public User(String passport, String username) {
         this.passport = passport;
@@ -24,7 +24,7 @@ public class User {
 
     /**
      * Метод get для паспортных данных
-     * @return
+     * @return возвращает паспортные данные
      */
     public String getPassport() {
         return passport;
@@ -32,7 +32,7 @@ public class User {
 
     /**
      * Метод set для паспортных данных(если нужно будет поменять данные наши)
-     * @param passport
+     * @param passport принимает паспортные данные для изменения
      */
     public void setPassport(String passport) {
         this.passport = passport;
@@ -40,7 +40,7 @@ public class User {
 
     /**
      * Метод get для имени
-     * @return
+     * @return возвращает имя
      */
     public String getUsername() {
         return username;
@@ -48,7 +48,7 @@ public class User {
 
     /**
      * Метод set для изменения имени
-     * @param username
+     * @param username принимает имя, чтобы можно было его изменить в методе
      */
     public void setUsername(String username) {
         this.username = username;
@@ -56,8 +56,8 @@ public class User {
 
     /**
      * Переопределение equals
-     * @param o
-     * @return
+     * @param o принимает параметр Object
+     * @return возвращает булево значение
      */
     @Override
     public boolean equals(Object o) {
@@ -73,7 +73,7 @@ public class User {
 
     /**
      * Переопределение hashCode
-     * @return
+     * @return возвращает hashCode
      */
     @Override
     public int hashCode() {
