@@ -95,38 +95,11 @@ public class BankService {
                                  String destPassport, String destRequisite, double amount) {
         Account accountSrc = findByRequisite(srcPassport, srcRequisite);
         Account accountDest = findByRequisite(destPassport, destRequisite);
-        boolean rsl = false;
         if (accountSrc != null && accountDest != null && accountSrc.getBalance() >= amount) {
             accountSrc.setBalance(accountSrc.getBalance() - amount);
             accountDest.setBalance(accountDest.getBalance() + amount);
             return true;
         }
-        return rsl;
-    }
-
-    /**
-     * Переопределение equals
-     * @param o
-     * @return
-     */
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        BankService that = (BankService) o;
-        return Objects.equals(users, that.users);
-    }
-
-    /**
-     * Переопределение hashCode
-     * @return
-     */
-    @Override
-    public int hashCode() {
-        return Objects.hash(users);
+        return false;
     }
 }
